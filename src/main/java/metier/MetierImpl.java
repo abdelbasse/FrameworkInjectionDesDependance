@@ -2,14 +2,20 @@ package metier;
 
 import dao.DaoImpl;
 import dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 /**
  * Business logic implementation class that depends on an IDao instance
  * to fetch data and perform calculations.
  */
+@Component
 public class MetierImpl implements IMetier {
 
     // Dependency on IDao for data retrieval
+    @Autowired
+    @Qualifier("daoImpl")
     private IDao dao;
 
     /**

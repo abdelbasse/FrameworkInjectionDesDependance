@@ -23,8 +23,7 @@ public class PresV2 {
         System.out.println("1. Static Version");
         System.out.println("2. Dynamic Version (Reflection)");
         System.out.println("3. Spring Version (XML)");
-        System.out.println("4. Spring Version (Annotations)");
-        System.out.print("Enter your choice (1/2/3/4): ");
+        System.out.print("Enter your choice (1/2/3): ");
         int choice = scanner.nextInt();
 
         // Run corresponding code based on user choice
@@ -42,11 +41,6 @@ public class PresV2 {
             case 3:
                 // Run Spring Version (assuming Spring config is set up properly)
                 runSpringVersionXml();
-                break;
-
-            case 4:
-                // Run Spring Version (assuming Spring config is set up properly)
-                runSpringVersionAnnotations();
                 break;
 
             default:
@@ -113,15 +107,6 @@ public class PresV2 {
             // Perform calculation and print result
             double callRes = metier.calcul();
             System.out.println("Calculation Result (Spring Version): " + callRes);
-        } catch (Exception e) {
-            System.out.println("Something went wrong in Spring Version! \n>Erreur: " + e.getMessage());
-        }
-    }
-
-    // Spring Version Method: Assuming Spring configuration Annotations is set up
-    private static void runSpringVersionAnnotations() {
-        try {
-
         } catch (Exception e) {
             System.out.println("Something went wrong in Spring Version! \n>Erreur: " + e.getMessage());
         }
