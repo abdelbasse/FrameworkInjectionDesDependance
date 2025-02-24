@@ -24,7 +24,7 @@ public class PresV3 {
             callRes = metier.calcul();
             System.out.println("Calculation Result is: " + callRes);
         } catch (Exception e) {
-            System.out.println("Something went wrong! \n> Error: ");
+            System.out.println("Something went wrong!\n> Error: ");
             System.out.println(e.getMessage());
         }
     }
