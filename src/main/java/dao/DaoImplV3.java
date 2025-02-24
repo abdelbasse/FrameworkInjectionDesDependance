@@ -1,5 +1,6 @@
 package dao;
 
+
 public class DaoImplV3 implements IDao{
     @Override
     public double getData(){

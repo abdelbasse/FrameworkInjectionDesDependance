@@ -5,6 +5,8 @@ import dao.DaoImplV2;
 import dao.IDao;
 import metier.IMetier;
 import metier.MetierImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,7 +23,8 @@ public class PresV2 {
         System.out.println("1. Static Version");
         System.out.println("2. Dynamic Version (Reflection)");
         System.out.println("3. Spring Version (XML)");
-        System.out.print("Enter your choice (1/2/3): ");
+        System.out.println("4. Spring Version (Annotations)");
+        System.out.print("Enter your choice (1/2/3/4): ");
         int choice = scanner.nextInt();
 
         // Run corresponding code based on user choice
@@ -38,7 +41,12 @@ public class PresV2 {
 
             case 3:
                 // Run Spring Version (assuming Spring config is set up properly)
-                runSpringVersion();
+                runSpringVersionXml();
+                break;
+
+            case 4:
+                // Run Spring Version (assuming Spring config is set up properly)
+                runSpringVersionAnnotations();
                 break;
 
             default:
@@ -94,19 +102,29 @@ public class PresV2 {
     }
 
     // Spring Version Method: Assuming Spring configuration XML is set up
-    private static void runSpringVersion() {
+    private static void runSpringVersionXml() {
         try {
-//            // Load Spring context from XML configuration
-//            ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-//
-//            // Retrieve the 'metier' bean from the Spring context
-//            IMetier metier = context.getBean("metier", IMetier.class);
-//
-//            // Perform calculation and print result
-//            double callRes = metier.calcul();
-//            System.out.println("Calculation Result (Spring Version): " + callRes);
+            // Load Spring context from XML configuration
+            ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+
+            // Retrieve the 'metier' bean from the Spring context
+            IMetier metier = context.getBean("metier", IMetier.class);
+
+            // Perform calculation and print result
+            double callRes = metier.calcul();
+            System.out.println("Calculation Result (Spring Version): " + callRes);
         } catch (Exception e) {
             System.out.println("Something went wrong in Spring Version! \n>Erreur: " + e.getMessage());
         }
     }
+
+    // Spring Version Method: Assuming Spring configuration Annotations is set up
+    private static void runSpringVersionAnnotations() {
+        try {
+
+        } catch (Exception e) {
+            System.out.println("Something went wrong in Spring Version! \n>Erreur: " + e.getMessage());
+        }
+    }
+
 }

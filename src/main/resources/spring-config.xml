@@ -4,11 +4,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- Define Bean for DaoImpl -->
-    <bean id="dao" class="dao.DaoImpl"/>
+
+    <bean id="dao_v1" class="dao.DaoImpl"/>
+
+    <bean id="dao_v2" class="dao.DaoImplV2"/>
 
     <!-- Define Bean for MetierImpl -->
     <bean id="metier" class="metier.MetierImpl">
-        <property name="dao" ref="dao"/>  <!-- Injecting DaoImpl to MetierImpl -->
+        <property name="dao" ref="dao_v1"/>
     </bean>
 </beans>
