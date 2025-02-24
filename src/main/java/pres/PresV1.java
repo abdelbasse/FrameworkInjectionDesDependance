@@ -17,7 +17,13 @@ public class PresV1 {
         IMetier metier = metierInst;
 
         // Perform calculation and print result
-        double callRes = metier.calcul();
-        System.out.println("Calculation Result is: " + callRes);
+        double callRes;
+        try {
+            callRes = metier.calcul();
+            System.out.println("Calculation Result is: " + callRes);
+        }catch (Exception e){
+            System.out.println("Somthing went wrong! \n>Erreur : ");
+            System.out.println(e.getMessage());
+        }
     }
 }
