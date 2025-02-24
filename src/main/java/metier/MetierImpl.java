@@ -17,7 +17,6 @@ public class MetierImpl implements IMetier {
      * This makes the class tightly coupled with DaoImpl.
      */
     public MetierImpl() {
-        this.dao = new DaoImpl();
     }
 
     /**
